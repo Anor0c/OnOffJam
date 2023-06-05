@@ -7,12 +7,14 @@ public class PlayerJump : MonoBehaviour
 {
     [SerializeField] float jumpForce = 100f, jumpBuffer = 1f, noGravTime=1f;
     [SerializeField] bool isGrounded = false;
+    float defaultGravityScale; 
     bool justLanded; 
     Rigidbody2D rb2D;
     public UnityEvent OnJumpEvent, OnLanded; 
     void Start()
     {
-        rb2D = GetComponent<Rigidbody2D>(); 
+        rb2D = GetComponent<Rigidbody2D>();
+        defaultGravityScale = rb2D.gravityScale; 
     }
 
     public void OnJump(InputAction.CallbackContext _ctx)
@@ -30,7 +32,7 @@ public class PlayerJump : MonoBehaviour
         rb2D.velocity += new Vector2(rb2D.velocity.x, jumpForce);
         rb2D.gravityScale = 0.05f; 
         yield return new WaitForSeconds(noGravTime);
-        rb2D.gravityScale = 1f;
+        rb2D.gravityScale = defaultGravityScale;
         yield return null; 
     }
     private void Update()
