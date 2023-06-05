@@ -19,7 +19,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (!isGrounded)
             return; 
-        if (!_ctx.started)
+        if (!_ctx.performed)
             return;
         OnJumpEvent.Invoke();
         StartCoroutine(JumpRoutine()); 
@@ -36,12 +36,11 @@ public class PlayerJump : MonoBehaviour
     private void Update()
     {
         var _debugRay = Physics2D.Raycast(transform.position, new Vector2(0, -transform.up.y ), jumpBuffer);
-        Debug.Log(_debugRay.collider); 
         if (_debugRay.collider != null)
             isGrounded = true;
         else
             isGrounded = false; 
-        
-        //Debug.DrawRay(transform.position, new Vector2(0, -transform.up.y * jumpBuffer), Color.green, 10000f);
+              //Debug.Log(_debugRay.collider);   
+        Debug.DrawRay(transform.position, new Vector2(0, -transform.up.y * jumpBuffer), Color.green, 10000f);
     }
 }
