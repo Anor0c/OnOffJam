@@ -6,7 +6,7 @@ using System.Collections;
 public class PlayerJump : MonoBehaviour
 {
     [SerializeField] float jumpForce = 100f, jumpBuffer = 1f, noGravTime=1f;
-    [SerializeField] bool isGrounded = false;
+    public bool isGrounded = false, canJump = false; 
     float defaultGravityScale; 
     bool justLanded; 
     Rigidbody2D rb2D;
@@ -19,7 +19,7 @@ public class PlayerJump : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext _ctx)
     {
-        if (!isGrounded)
+        if (!canJump)
             return; 
         if (!_ctx.performed)
             return;
@@ -41,7 +41,10 @@ public class PlayerJump : MonoBehaviour
         if (_debugRay.collider != null)
             isGrounded = true;
         else
-            isGrounded = false; 
+            isGrounded = false;
+        if (isGrounded)
+            canJump = true; 
+
               //Debug.Log(_debugRay.collider);   
         Debug.DrawRay(transform.position, new Vector2(0, -transform.up.y * jumpBuffer), Color.green, 10000f);
     }

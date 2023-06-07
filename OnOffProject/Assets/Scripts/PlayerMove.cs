@@ -1,11 +1,13 @@
 using UnityEngine.InputSystem; 
 using UnityEngine;
+using UnityEngine.Events; 
 
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] float speed;
     Vector2 inputDir, playerDir;
-    Rigidbody2D rb2D; 
+    Rigidbody2D rb2D;
+    public UnityEvent<Vector2> onPressMovement; 
 
     void Start()
     {
@@ -16,7 +18,8 @@ public class PlayerMove : MonoBehaviour
     {
         if (!_ctx.performed)
             inputDir = Vector2.zero;
-        inputDir = _ctx.ReadValue<Vector2>(); 
+        inputDir = _ctx.ReadValue<Vector2>();
+        onPressMovement.Invoke(inputDir);  
     }
     private void Update()
     {
