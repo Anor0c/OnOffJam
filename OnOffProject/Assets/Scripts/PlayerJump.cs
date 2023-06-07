@@ -48,4 +48,8 @@ public class PlayerJump : MonoBehaviour
               //Debug.Log(_debugRay.collider);   
         Debug.DrawRay(transform.position, new Vector2(0, -transform.up.y * jumpBuffer), Color.green, 10000f);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    { 
+        OnLanded.Invoke(); 
+    }
 }

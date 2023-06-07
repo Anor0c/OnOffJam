@@ -7,7 +7,7 @@ public class WallSliding : MonoBehaviour
     [Header("WallSlide")]
     const float wallCheckSize = 0.6f; 
     [SerializeField] float slidingSpeed=-2f;
-    bool isSliding = false;
+    //bool isSliding = false;
 
     [Header("WallJump")]
     [SerializeField] Vector2 wallJumpDirection = new Vector2(0, 0);
@@ -31,12 +31,12 @@ public class WallSliding : MonoBehaviour
             return;
         else if (sRenderer.flipX)
         {
-            wallCheck = Physics2D.Raycast(transform.position, -transform.right, wallCheckSize);
+            wallCheck = Physics2D.Raycast(transform.position, -transform.right, wallCheckSize, 6);
             Debug.DrawRay(transform.position, -transform.right * wallCheckSize, Color.yellow, 100000f);
         }
         else
         {
-            wallCheck = Physics2D.Raycast(transform.position, transform.right, wallCheckSize);
+            wallCheck = Physics2D.Raycast(transform.position, transform.right, wallCheckSize, 6);
             Debug.DrawRay(transform.position, transform.right * wallCheckSize, Color.yellow, 100000f); 
         }
         if (wallCheck)

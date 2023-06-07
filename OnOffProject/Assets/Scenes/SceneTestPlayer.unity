@@ -1083,7 +1083,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 90
+  m_SurfaceArc: 170
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1140,7 +1140,7 @@ PlatformEffector2D:
   m_SurfaceArc: 180
   m_UseSideFriction: 1
   m_UseSideBounce: 0
-  m_SideArc: 90
+  m_SideArc: 20
 --- !u!19719996 &2056691326
 TilemapCollider2D:
   m_ObjectHideFlags: 0
