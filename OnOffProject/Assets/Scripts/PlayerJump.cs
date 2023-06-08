@@ -7,8 +7,8 @@ public class PlayerJump : MonoBehaviour
 {
     [SerializeField] float jumpForce = 100f, jumpBuffer = 1f, noGravTime=1f;
     public bool isGrounded = false, canJump = false; 
-    float defaultGravityScale; 
-    bool justLanded; 
+    float defaultGravityScale;
+    public bool hasJumped = false; 
     Rigidbody2D rb2D;
     public UnityEvent OnJumpEvent, OnLanded; 
     void Start()
@@ -23,6 +23,7 @@ public class PlayerJump : MonoBehaviour
             return; 
         if (!_ctx.performed)
             return;
+        hasJumped = true; 
         OnJumpEvent.Invoke();
         StartCoroutine(JumpRoutine()); 
     }
@@ -43,7 +44,11 @@ public class PlayerJump : MonoBehaviour
         else
             isGrounded = false;
         if (isGrounded)
-            canJump = true; 
+        {
+            canJump = true;
+            hasJumped = false;
+        }
+ 
 
               //Debug.Log(_debugRay.collider);   
         Debug.DrawRay(transform.position, new Vector2(0, -transform.up.y * jumpBuffer), Color.green, 10000f);
