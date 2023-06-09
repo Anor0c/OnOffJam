@@ -8,10 +8,11 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] float jumpForce = 100f, jumpBuffer = 1f, noGravTime=1f;
     public bool isGrounded = false, canJump = false; 
     float defaultGravityScale;
-    public bool hasJumped = false;
-    bool isAscend; 
+    public bool hasJumped = true;
+    [SerializeField] bool isAscend; 
     Rigidbody2D rb2D;
-    RaycastHit2D hit; 
+    [SerializeField] RaycastHit2D hit;
+    Vector2 jumpMomentum; 
     public UnityEvent OnJumpEvent; 
     void Start()
     {
@@ -26,7 +27,8 @@ public class PlayerJump : MonoBehaviour
         if (!_ctx.performed)
             return;
         isAscend = true; 
-        hasJumped = true; 
+        hasJumped = true;
+        jumpMomentum = rb2D.velocity; 
         OnJumpEvent.Invoke();
         StartCoroutine(JumpRoutine()); 
     }
@@ -34,7 +36,9 @@ public class PlayerJump : MonoBehaviour
     IEnumerator JumpRoutine()
     {
         rb2D.velocity += new Vector2(rb2D.velocity.x, jumpForce);
-        rb2D.gravityScale = 0.05f; 
+        rb2D.gravityScale = 0.05f;
+        yield return null;
+        hasJumped = true; 
         yield return new WaitForSeconds(noGravTime);
         rb2D.gravityScale = defaultGravityScale;
         isAscend = false; 
@@ -42,22 +46,37 @@ public class PlayerJump : MonoBehaviour
     }
     private void Update()
     {
-        if (!isAscend)
-        {
-        hit = Physics2D.Raycast(transform.position, new Vector2(0, -transform.up.y ), jumpBuffer);
-        Debug.DrawRay(transform.position, new Vector2(0, -transform.up.y * jumpBuffer), Color.green, 10000f);
-
-        }
-
-        if (hit.collider != null)
-            isGrounded = true;
-        else
-            isGrounded = false;
-        if (isGrounded)
+        if (isGrounded) 
         {
             canJump = true;
             hasJumped = false;
         }
-              //Debug.Log(_debugRay.collider);   
+
+        if (isAscend)
+        {
+            hit= Physics2D.Raycast(transform.position, transform.position, 0f); 
+            hasJumped=true; 
+            isGrounded = false;
+        }
+        else
+        {
+            hit = Physics2D.Raycast(transform.position, new Vector2(0, -transform.up.y), jumpBuffer);
+            Debug.DrawRay(transform.position, new Vector2(0, -transform.up.y * jumpBuffer), Color.green, 10000f);
+        }
+
+
+
+        
+        if (hit.collider != null)
+            isGrounded = true; 
+        else if (hasJumped)
+        {
+            isGrounded = false;
+            hasJumped = true; 
+        }
+        else
+        {
+            isGrounded = false; 
+        }    //Debug.Log(_debugRay.collider);   
     }
 }

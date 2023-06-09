@@ -6,9 +6,9 @@ public class LightController : MonoBehaviour
     PlayerJump playerJump;
     new Light2D light;
     [SerializeField] float litInnerRadius = 4f, litOuterRadius = 6f, dimInnerRadius = 0.7f, dimOuterRadius = 1.5f;
-    [SerializeField] float jumpApex = 10f; 
+    [SerializeField] float jumpApex = 10; 
     [SerializeField] bool litRoutinePerformed;
-    [SerializeField]float startPos, intJumpApex;
+    float startPos, intJumpApex, currentLerpTime, lerpRatio;
     void Start()
     {
         light = GetComponent<Light2D>();
@@ -26,32 +26,24 @@ public class LightController : MonoBehaviour
     }
     void LightRoutine()
     {
-        float _currentLerpTime = transform.position.y - startPos;
-        float _lerpRatio = _currentLerpTime / intJumpApex;
-        light.pointLightInnerRadius = Mathf.Lerp(dimInnerRadius, litInnerRadius, _lerpRatio);
-        light.pointLightOuterRadius = Mathf.Lerp(dimOuterRadius, litOuterRadius, _lerpRatio);
+        currentLerpTime = transform.position.y - startPos;
+        lerpRatio = currentLerpTime / intJumpApex;
+        light.pointLightInnerRadius = Mathf.Lerp(dimInnerRadius, litInnerRadius, lerpRatio);
+        light.pointLightOuterRadius = Mathf.Lerp(dimOuterRadius, litOuterRadius, lerpRatio);
         Debug.Log("control");
 
     }
     private void Update()
     {
-        if (playerJump.hasJumped)
+        if (!playerJump.isGrounded)
         {
             LightRoutine();
         }
+        else
+        {
+            light.pointLightInnerRadius = dimInnerRadius;
+            light.pointLightOuterRadius = dimOuterRadius; 
+        }
         
     }
-
-    /*float _startDimTime = Time.time; 
-    float _endDimTime = _startDimTime + dimLerpTime;
-    while (Time.time < _endDimTime)
-    {
-        float _currentLerpTime = Time.time - _startDimTime;
-        float _lerpRatio = _currentLerpTime / litLerpTime;
-        light.pointLightInnerRadius = Mathf.Lerp(light.pointLightInnerRadius, dimInnerRadius, _lerpRatio);
-        light.pointLightOuterRadius = Mathf.Lerp(light.pointLightOuterRadius, dimOuterRadius, _lerpRatio);
-    }*/
-    //litRoutinePerformed = false;
-
-
 }
