@@ -568,6 +568,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1758410552142202156, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
   m_PrefabInstance: {fileID: 1396152693}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1180144006 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1032253264, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
+  m_PrefabInstance: {fileID: 1396152693}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97456527fcbb44243aa02c5a3e818b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1396152693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -580,8 +591,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1758410552142202155, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
+      propertyPath: OnJumpEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758410552142202155, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
+      propertyPath: OnJumpEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758410552142202155, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
+      propertyPath: OnJumpEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1180144006}
+    - target: {fileID: 1758410552142202155, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
+      propertyPath: OnJumpEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758410552142202155, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
       propertyPath: OnJumpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LightControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758410552142202155, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
+      propertyPath: OnJumpEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DetectBufferSlide
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758410552142202155, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
+      propertyPath: OnJumpEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: WallSliding, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758410552142202155, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
+      propertyPath: OnJumpEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1758410552142202156, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
       propertyPath: m_RootOrder
@@ -783,7 +822,7 @@ GameObject:
   - component: {fileID: 1888497711}
   - component: {fileID: 1888497710}
   - component: {fileID: 1888497713}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Platforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1108,7 +1147,7 @@ GameObject:
   - component: {fileID: 2056691327}
   - component: {fileID: 2056691326}
   - component: {fileID: 2056691325}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

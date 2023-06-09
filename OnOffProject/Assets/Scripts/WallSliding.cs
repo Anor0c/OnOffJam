@@ -38,30 +38,34 @@ public class WallSliding : MonoBehaviour
     }
     void Update()
     {
+        if (playerJump.isGrounded)
+        {
+            isSliding = false;
+            canSlide = false;
+            wallCheck = false;
+            return;
+        }
+
         if (!canSlide)
-            return; 
+            return;
         else if (sRenderer.flipX)
         {
-            hit = Physics2D.Raycast(transform.position, -transform.right, wallCheckSize, 6);  //contact, hits, wallCheckSize, 6f); 
+            hit = Physics2D.Raycast(transform.position, -transform.right, wallCheckSize);  //contact, hits, wallCheckSize, 6f); 
             Debug.DrawRay(transform.position, -transform.right * wallCheckSize, Color.yellow, 100000f);
         }
         else
         {
-            hit = Physics2D.Raycast(transform.position, transform.right, wallCheckSize, 6);
+            hit = Physics2D.Raycast(transform.position, transform.right, wallCheckSize);
             Debug.DrawRay(transform.position, transform.right * wallCheckSize, Color.yellow, 100000f);
         }
         Debug.Log(hit.collider);
-        wallCheck = hit; 
+        wallCheck = hit;
         if (wallCheck)
             playerJump.canJump = true;
         else if (!playerJump.isGrounded)
             playerJump.canJump = false;
         else return;
 
-
-        if (playerJump.isGrounded)
-            canSlide = false;
-        else return; 
     }
     private void FixedUpdate()
     {

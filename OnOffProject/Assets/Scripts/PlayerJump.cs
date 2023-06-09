@@ -8,9 +8,11 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] float jumpForce = 100f, jumpBuffer = 1f, noGravTime=1f;
     public bool isGrounded = false, canJump = false; 
     float defaultGravityScale;
-    public bool hasJumped = false; 
+    public bool hasJumped = false;
+    bool isAscend; 
     Rigidbody2D rb2D;
-    public UnityEvent OnJumpEvent, OnLanded; 
+    RaycastHit2D hit; 
+    public UnityEvent OnJumpEvent; 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -23,6 +25,7 @@ public class PlayerJump : MonoBehaviour
             return; 
         if (!_ctx.performed)
             return;
+        isAscend = true; 
         hasJumped = true; 
         OnJumpEvent.Invoke();
         StartCoroutine(JumpRoutine()); 
@@ -34,12 +37,19 @@ public class PlayerJump : MonoBehaviour
         rb2D.gravityScale = 0.05f; 
         yield return new WaitForSeconds(noGravTime);
         rb2D.gravityScale = defaultGravityScale;
+        isAscend = false; 
         yield return null; 
     }
     private void Update()
     {
-        var _debugRay = Physics2D.Raycast(transform.position, new Vector2(0, -transform.up.y ), jumpBuffer);
-        if (_debugRay.collider != null)
+        if (!isAscend)
+        {
+        hit = Physics2D.Raycast(transform.position, new Vector2(0, -transform.up.y ), jumpBuffer);
+        Debug.DrawRay(transform.position, new Vector2(0, -transform.up.y * jumpBuffer), Color.green, 10000f);
+
+        }
+
+        if (hit.collider != null)
             isGrounded = true;
         else
             isGrounded = false;
@@ -48,13 +58,6 @@ public class PlayerJump : MonoBehaviour
             canJump = true;
             hasJumped = false;
         }
- 
-
               //Debug.Log(_debugRay.collider);   
-        Debug.DrawRay(transform.position, new Vector2(0, -transform.up.y * jumpBuffer), Color.green, 10000f);
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    { 
-        OnLanded.Invoke(); 
     }
 }
