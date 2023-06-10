@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 869b958f37ae12a4c930e9bdfe5e0966
+guid: a04ecf2b7954f1c46bd76f70e57040cc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SS_SN_Fall_0
+      name: SS_SN_Jump_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 136
+        width: 113
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5a781884e8f5e4889780e7c2ce6ffc
+      internalID: -489720547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_SN_Jump_1
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 136
+        width: 113
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f3d10a3b13fba34e84faadb059b0b9b
+      internalID: 332335354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_SN_Jump_2
       rect:
         serializedVersion: 2
         x: 0
@@ -131,29 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 696b158f46399eb459505ea4ca7f7841
-      internalID: -856568105
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_SN_Fall_1
-      rect:
-        serializedVersion: 2
-        x: 113
-        y: 0
-        width: 113
-        height: 136
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 220cd0b353a4c7e4c946f113b01d67c3
-      internalID: -1273618600
+      spriteID: 03a6a6e2ca3102c4281fc410226f0072
+      internalID: -52738828
       vertices: []
       indices: 
       edges: []
@@ -169,8 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SS_SN_Fall_1: -1273618600
-      SS_SN_Fall_0: -856568105
+      SS_SN_Jump_0: -489720547
+      SS_SN_Jump_1: 332335354
+      SS_SN_Jump_2: -52738828
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
