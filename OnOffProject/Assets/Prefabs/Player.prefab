@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 1758410552142202155}
   - component: {fileID: 1032253264}
   - component: {fileID: 1032253265}
+  - component: {fileID: 637049409}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -352,6 +353,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ee5ae311a2e5542a6408695368e0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &637049409
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758410552142202160}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1758410553488818574
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,10 +380,10 @@ GameObject:
   - component: {fileID: 1758410553488818572}
   - component: {fileID: 1758410553488818575}
   - component: {fileID: 7546639345677687242}
-  - component: {fileID: 8976865380606458014}
+  - component: {fileID: 1389995646}
   m_Layer: 2
   m_Name: Player Light 2D
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -477,25 +494,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065a707f330f40c4b80605c01c1bcdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  litInnerRadius: 2
-  litOuterRadius: 6
+  litInnerRadius: 3
+  litOuterRadius: 8
   dimInnerRadius: 0.5
   dimOuterRadius: 1.5
   jumpApex: 3
   litRoutinePerformed: 0
---- !u!58 &8976865380606458014
-CircleCollider2D:
+  onLightChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1389995646}
+        m_TargetAssemblyTypeName: LightColider, Assembly-CSharp
+        m_MethodName: ColiderSizer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1389995646
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758410553488818574}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 5
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edff3c6572ed70d44a04da00d00f743b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSize: 7
+  col: {fileID: 0}
