@@ -55,7 +55,8 @@ public class PlayerJump : MonoBehaviour
         if (isAscend)
         {
             hit= Physics2D.Raycast(transform.position, transform.position, 0f); 
-            hasJumped=true; 
+            hasJumped=true;
+            canJump = false; 
             isGrounded = false;
         }
         else
