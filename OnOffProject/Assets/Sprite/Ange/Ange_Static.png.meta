@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a04ecf2b7954f1c46bd76f70e57040cc
+guid: 91d8281f4b49caf408e8ed7f4b5df0df
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,112 +115,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: SS_SN_Jump_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 136
-        width: 113
-        height: 136
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd9fd54ee1b32d74d81de226ee5472f2
-      internalID: -813138950
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_SN_Jump_1
-      rect:
-        serializedVersion: 2
-        x: 113
-        y: 136
-        width: 113
-        height: 136
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa21bef0fcf1dbc4ca0ed6ef74650e1b
-      internalID: 286131366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_SN_Jump_2
-      rect:
-        serializedVersion: 2
-        x: 226
-        y: 136
-        width: 113
-        height: 136
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0f34c8152ca59443b2f08730ed657d6
-      internalID: 1734786120
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_SN_Jump_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 113
-        height: 136
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f05c5e7a2984961498094df100b1790a
-      internalID: -618708348
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_SN_Jump_4
-      rect:
-        serializedVersion: 2
-        x: 113
-        y: 0
-        width: 113
-        height: 136
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a8bc936f5219c845bb4741a5064904d
-      internalID: 2068077174
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -231,12 +126,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      SS_SN_Jump_0: -813138950
-      SS_SN_Jump_3: -618708348
-      SS_SN_Jump_4: 2068077174
-      SS_SN_Jump_1: 286131366
-      SS_SN_Jump_2: 1734786120
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
