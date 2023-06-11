@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Events; 
 using System.Collections; 
 public class LightController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class LightController : MonoBehaviour
     [SerializeField] float jumpApex = 10; 
     [SerializeField] bool litRoutinePerformed;
     float startPos, intJumpApex, currentLerpTime, lerpRatio;
+    public UnityEvent<float> onLightChange; 
     void Start()
     {
         light = GetComponent<Light2D>();
@@ -30,6 +32,7 @@ public class LightController : MonoBehaviour
         lerpRatio = currentLerpTime / intJumpApex;
         light.pointLightInnerRadius = Mathf.Lerp(dimInnerRadius, litInnerRadius, lerpRatio);
         light.pointLightOuterRadius = Mathf.Lerp(dimOuterRadius, litOuterRadius, lerpRatio);
+        onLightChange.Invoke(lerpRatio); 
         Debug.Log("control");
 
     }
