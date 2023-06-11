@@ -21,7 +21,7 @@ public class AntiBlidBehaviour : StateMachineBehaviour
     {
         timer -= Time.deltaTime;
         animator.SetFloat("BlindTimer", timer);
-        rb2d.velocity = new Vector2(target.x - animator.gameObject.transform.position.x, 0) * speed;
+        rb2d.velocity = new Vector2(target.x - animator.gameObject.transform.position.x, 0).normalized * speed;
     }
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
