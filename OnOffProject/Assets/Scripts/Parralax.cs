@@ -13,7 +13,7 @@ public class Parralax : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    private void Update()
     {
         transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, transform.position.z)+camOffset; 
     }
