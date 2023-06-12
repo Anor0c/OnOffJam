@@ -13,7 +13,8 @@ public class PlayerAnim : MonoBehaviour
         if (_inputDir.x < 0)
             sRenderer.flipX = true;
 
-        else
+        else if (_inputDir.x > 0)
             sRenderer.flipX = false;
+        else return; 
     }
 }

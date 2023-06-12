@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 1032253264}
   - component: {fileID: 1032253265}
   - component: {fileID: 637049409}
+  - component: {fileID: 793355290}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -169,7 +170,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 3
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -248,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  maxSpeed: 10
+  maxSpeed: 12
   inputDir: {x: 0, y: 0}
   momentum: {x: 0, y: 0}
   onPressMovement:
@@ -370,6 +371,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!95 &793355290
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758410552142202160}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10006a3282166f24a9019ca4583fd945, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1758410553488818574
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,15 +516,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065a707f330f40c4b80605c01c1bcdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  litInnerRadius: 3
-  litOuterRadius: 8
+  litInnerRadius: 4
+  litOuterRadius: 12
   dimInnerRadius: 0.5
   dimOuterRadius: 1.5
   jumpApex: 3
   litRoutinePerformed: 0
   startPos: 0
   intJumpApex: 0
-  currentLerpTime: 0
+  currentPos: 0
   lerpRatio: 0
   onLightChange:
     m_PersistentCalls:
@@ -532,7 +553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edff3c6572ed70d44a04da00d00f743b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSize: 7
+  maxSize: 10
   col: {fileID: 0}
 --- !u!1 &1966603113636953282
 GameObject:
@@ -545,7 +566,7 @@ GameObject:
   - component: {fileID: 3183589138590524193}
   - component: {fileID: 2573083492491344568}
   - component: {fileID: 6672134264968998466}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -605,16 +626,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664605939edc74847a52a7a786f9017c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeTag: Death
   OnTrigger:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
+        m_MethodName: ToLose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

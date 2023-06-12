@@ -363,18 +363,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1032253264, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1389995646, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
-      propertyPath: maxSize
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1758410552142202155, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1758410552142202156, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -419,53 +407,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1758410552142202157, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
-      propertyPath: maxSpeed
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 1758410552142202160, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1758410552142202161, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6672134264968998466, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
-      propertyPath: activeTag
-      value: Death
       objectReference: {fileID: 0}
     - target: {fileID: 6672134264968998466, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
       propertyPath: OnTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 928079667}
-    - target: {fileID: 6672134264968998466, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
-      propertyPath: OnTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToLose
-      objectReference: {fileID: 0}
-    - target: {fileID: 6672134264968998466, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
-      propertyPath: OnTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneChange, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6672134264968998466, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
-      propertyPath: OnTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7546639345677687242, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
-      propertyPath: litInnerRadius
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7546639345677687242, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
-      propertyPath: litOuterRadius
-      value: 12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
---- !u!1 &625204333 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1758410552142202160, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
-  m_PrefabInstance: {fileID: 625204332}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &660449840 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2183321564951531335, guid: 367acab6b4839d34f847dc791e026c4d, type: 3}
@@ -588,26 +539,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1758410552142202156, guid: d4a9575d7b29552489f8cc3a4eb3b0f1, type: 3}
   m_PrefabInstance: {fileID: 625204332}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &793355290
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625204333}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 10006a3282166f24a9019ca4583fd945, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &928079667 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 817828548637340713, guid: 96de083a19ee32947b1f20e8ade5a8cc, type: 3}
