@@ -16,6 +16,6 @@ public class AntiAIChase : StateMachineBehaviour
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        rb2d.velocity = new Vector2(player.transform.position.x - animator.gameObject.transform.position.x, 0) * speed;
+        rb2d.velocity = new Vector2(player.transform.position.x - animator.gameObject.transform.position.x, 0).normalized * speed;
     }
 }

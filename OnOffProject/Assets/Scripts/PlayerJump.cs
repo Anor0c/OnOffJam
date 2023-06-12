@@ -69,7 +69,11 @@ public class PlayerJump : MonoBehaviour
 
         
         if (hit.collider != null)
-            isGrounded = true; 
+        {
+            isGrounded = true;
+            Debug.Log(hit.collider); 
+        }
+
         else if (hasJumped)
         {
             isGrounded = false;

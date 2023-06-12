@@ -16,7 +16,7 @@ public class AIChase : StateMachineBehaviour
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        rb2d.velocity = (player.transform.position - animator.gameObject.transform.position) * speed;
+        rb2d.velocity = (player.transform.position - animator.gameObject.transform.position).normalized * speed;
     }
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

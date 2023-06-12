@@ -9,7 +9,7 @@ public class LightController : MonoBehaviour
     [SerializeField] float litInnerRadius = 4f, litOuterRadius = 6f, dimInnerRadius = 0.7f, dimOuterRadius = 1.5f;
     [SerializeField] float jumpApex = 10; 
     [SerializeField] bool litRoutinePerformed;
-    [SerializeField]float startPos, intJumpApex, currentLerpTime, lerpRatio;
+    [SerializeField]float startPos, intJumpApex, currentPos, lerpRatio;
     public UnityEvent<float> onLightChange; 
     void Start()
     {
@@ -28,8 +28,8 @@ public class LightController : MonoBehaviour
     }
     void LightRoutine()
     {
-        currentLerpTime = transform.position.y - startPos;
-        lerpRatio = currentLerpTime / intJumpApex;
+        currentPos = transform.position.y - startPos;
+        lerpRatio = currentPos / jumpApex;
         light.pointLightInnerRadius = Mathf.Lerp(dimInnerRadius, litInnerRadius, lerpRatio);
         light.pointLightOuterRadius = Mathf.Lerp(dimOuterRadius, litOuterRadius, lerpRatio);
         onLightChange.Invoke(lerpRatio); 

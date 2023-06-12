@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1561019760829464701}
   - component: {fileID: 1561019760829464691}
   - component: {fileID: 1561019760829464700}
+  - component: {fileID: 2733658346032881713}
   m_Layer: 0
   m_Name: AntiAnge
   m_TagString: Death
@@ -272,5 +273,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 392ae03924c266f489f190b560109bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2733658346032881713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561019760829464698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b563fc1d644b1e4ebd7fc50b3bc8716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
