@@ -121,7 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 364505891357073358}
   - component: {fileID: 364505891357073345}
-  - component: {fileID: 364505891357073359}
+  - component: {fileID: 3969242937613847685}
   m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
@@ -197,7 +197,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &364505891357073359
+--- !u!114 &3969242937613847685
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 364505891357073344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17335f3b05f88d744a1b98173578c595, type: 3}
+  m_Script: {fileID: 11500000, guid: fb65dcd343f5f2747969eab2cacc34d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camOffset: {x: 0, y: -3, z: 0}
+  camOffset: {x: 0, y: 3, z: 0}
